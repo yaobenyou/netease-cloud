@@ -14,6 +14,7 @@
             <!-- </keep-alive> -->
           </transition>
         </div>
+        
       </div>
       <div class="footerBox"><bottom-audio /></div>
     </div>

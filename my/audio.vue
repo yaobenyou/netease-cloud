@@ -34,11 +34,27 @@
       /></el-tooltip>
     </div>
 
-    <div>
-        
+<!-- 循环歌词按钮 -->
+    <div class="buttonBox">
+        <el-tooltip class="item" effect="dark" content="列表循环" placement="top">
+          <div><img src="" alt=""></div>
+        </el-tooltip>
+        <div class="biaoZhun">标准</div>
+        <div><img src="调节" alt=""></div>
+        <div></div>
     </div>
 
-    <div></div>
+    <!-- 列表 -->
+    <div @click="listDialog">
+      <el-table :data="listData" @row-click="playMusicList" stripe ></el-table>
+      <el-table-column></el-table-column>
+      <el-table-column></el-table-column>
+      <el-table-column></el-table-column>
+      <el-table-column></el-table-column>
+    </div>
+
+    <!-- 歌曲 -->
+    <audio :src="this.musicUrl" class="playMusicAudio" autoplay ref="playMusicAudio" id="musicAudio" loop="loop"></audio>
   </div>
 </template>
 
@@ -190,3 +206,5 @@ export default {
 el-slider组件的change事件与input事件的区别
     change是鼠标松开触发
     input是实时触发
+
+el-tatle组件

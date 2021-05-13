@@ -7,7 +7,7 @@
       <button @click="showClick">显示</button>
     </div>
     <div v-if="show">
-      <List-item :info="item" v-for="(item, index) in this.info" :key="index" />
+      <ListItem :info="item" v-for="(item, index) in this.info" :key="index" />
     </div>
   </body>
 </template>
@@ -28,11 +28,14 @@ export default {
   },
   created() {
     this.getCommentList();
+  },
+  mounted() {
     this.start();
   },
   methods: {
     async getCommentList() {
       const res = await this.$http.get("comment/hotwall/list");
+      console.log("嘿嘿嘿...");
       console.log(res.data.data);
       this.info = res.data.data;
     },
